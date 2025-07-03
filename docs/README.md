@@ -55,6 +55,11 @@ This project is fully compatible with dbt Cloud:
 
 
 
+![image](https://github.com/user-attachments/assets/b24a3cc2-204a-40f6-8dd7-852c68d2225e)
+
+
+
+
 ## 👨‍💻 Author
 
 *Built with professional data engineering best practices to showcase a complete analytics workflow.*
