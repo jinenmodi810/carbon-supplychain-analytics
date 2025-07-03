@@ -1,0 +1,11 @@
+shipment_id,supplier_id,weight_kg,distance_km,fuel_type,ship_date,delivery_delay_days,origin_country,destination_country
+SHP001,SUP001,1500,450,Diesel,2024-01-10,2,Germany,France
+SHP002,SUP002,500,200,Electric,2024-01-11,0,Netherlands,Germany
+SHP003,SUP003,3000,900,Diesel,2024-01-12,4,Spain,Italy
+SHP004,SUP001,700,300,Hybrid,2024-01-15,1,France,Germany
+SHP005,SUP004,2200,800,Diesel,2024-01-18,3,Italy,Spain
+SHP006,SUP005,1800,650,Hybrid,2024-01-19,2,France,Spain
+SHP007,SUP002,1000,400,Electric,2024-01-20,0,Netherlands,France
+SHP008,SUP003,2700,1000,Diesel,2024-01-22,5,Spain,Germany
+SHP009,SUP004,2300,750,Diesel,2024-01-25,3,Italy,France
+SHP010,SUP005,1600,500,Hybrid,2024-01-27,1,France,Germany

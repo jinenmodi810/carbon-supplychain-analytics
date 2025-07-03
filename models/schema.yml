@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: stg_shipments
+    description: "Staging model for shipment data"
+    columns:
+      - name: shipment_id
+        description: "Unique identifier for each shipment"
+        tests:
+          - unique
+          - not_null
+      - name: fuel_type
+        description: "Type of fuel used in shipment"
+        tests:
+          - accepted_values:
+              values: ['Diesel', 'Electric', 'Hybrid']
+
+  - name: stg_suppliers
+    description: "Staging model for supplier data"
+    columns:
+      - name: supplier_id
+        description: "Unique supplier identifier"
+        tests:
+          - unique
+          - not_null
+      - name: supplier_country
+        description: "Country where supplier is based"
+      - name: sustainability_rating
+        description: "Supplier sustainability grade from A to C"
+        tests:
+          - accepted_values:
+              values: ['A', 'B', 'C']
+    
+  - name: stg_emission_factors
+    description: "Staging model for emission factors data"
+    columns:
+      - name: fuel_type
+        description: "Fuel type category"
+        tests:
+          - not_null
+      - name: grams_co2_per_km
+        description: "Carbon emissions per kilometer for that fuel type"
+        tests:
+          - not_null
+  
+
+  - name: int_shipments_with_emissions
+    description: "Intermediate model joining shipments with supplier details and CO2 emissions"
+    columns:
+      - name: shipment_id
+        description: "Unique shipment identifier"
+        tests:
+          - unique
+          - not_null
+      - name: total_co2_grams
+        description: "Estimated total CO2 emissions for the shipment"
+  
+
+  - name: fct_supplier_emissions
+    description: "Fact table summarizing shipments and carbon emissions by supplier"
+    columns:
+      - name: supplier_id
+        description: "Supplier ID"
+      - name: total_shipments
+        description: "Total shipments sent by this supplier"
+      - name: total_co2_grams
+        description: "Total carbon emissions for this supplier"
+      - name: avg_co2_grams
+        description: "Average carbon emissions per shipment for this supplier"
